@@ -1,0 +1,25 @@
+header
+  nav.nav-body.navbar.navbar-expand-lg.shadow.pt-2.pb-2.px-4.mb-0.sticky-top
+    .navbar__logo-block.text-center
+      a.navbar-brand.header__logo.pb-2 href="/" 掲示板
+    button.navbar-toggler.custom-hamburger.p-1 data-toggle="collapse" data-target="#navbarcontent"
+      span.navbar-toggler-icon
+    #navbarcontent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+	    - if user_signed_in?
+		  li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+			= link_to "ホーム",   '/' ,class: "nav-link"
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "プロフィール編集", edit_user_registration_path ,class: "nav-link"
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "スレッド作成", new_thread_path ,class: "nav-link"
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "ログアウト", destroy_user_session_path , method: :delete ,class: "nav-link"
+		- else
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "ホーム",   '/' ,class: "nav-link"
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "新規登録", new_user_registration_path ,class: "nav-link"
+          li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+            = link_to "ログイン", new_user_session_path ,class: "nav-link"
+        
