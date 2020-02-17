@@ -9,6 +9,8 @@ header
 	    - if user_signed_in?
 		  li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
 			= link_to "ホーム",   '/' ,class: "nav-link"
+		  li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
+			= link_to "スレッド一覧", posts_path  ,class: "nav-link"
           li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4
             = link_to "プロフィール編集", edit_user_registration_path ,class: "nav-link"
           li.nav-item.ml-3.ml-xl-3.my-lg-0.my-1.mt-lg-0.mt-4

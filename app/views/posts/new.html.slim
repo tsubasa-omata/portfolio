@@ -1,1 +1,6 @@
 h2 スレッド作成画面
+= simple_form_for @post do |f|
+  = f.input :title, label: 'タイトル'
+  = f.input :content, label: '説明'
+  = f.collection_check_boxes :category_ids, Category.all, :id, :name
+  = f.button :submit, "作成", :class => 'btn-primary'
