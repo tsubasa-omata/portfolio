@@ -1,5 +1,10 @@
 h2 スレッド一覧
 = search_form_for(@q, url:posts_path) do |f|
-  = f.label :name_cont, ''
-  = f.text_field :title_or_content_or_response_content_cont
+  = f.text_field :title_or_content_or_responses_content_cont
   = f.submit "検索"
+
+- if @posts.any?
+  - @posts.each do |post| 
+    = link_to post.title , post_path(post.id)
+
+= paginate @posts
