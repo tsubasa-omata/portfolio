@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     @posts = @q.result.page(params[:page]).per(5)
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @response = Response.new
+    @responses = @post.responses.page(params[:page]).per(20)
+  end
+
   def new
     @post = Post.new
     @category = Category.new

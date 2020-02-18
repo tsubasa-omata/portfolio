@@ -1,0 +1,9 @@
+- if responses.present? 
+  - responses.each do |response|
+    .jumbotron.pt-1.pb-4.m-2
+      .pr-2
+        .pr-4.d-inline-block.font-weight-bold
+          = response.user.name
+        = response.created_at.to_s(:datetime_jp)
+      = response.content
+        

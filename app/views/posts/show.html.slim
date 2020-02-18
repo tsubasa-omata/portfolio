@@ -1,0 +1,15 @@
+h2.text-center.mt-4 スレッド詳細
+.jumbotron.p-4.bg-white.border
+  h4
+    = @post.title
+  div
+    = @post.content
+
+- if user_signed_in?
+  == render partial: 'responses/index', locals: { responses: @responses } 
+  == render partial: 'responses/form', locals: { response: @response, post: @post }
+- else 
+  p.text-center.mb-3.text-muted
+    |コメントするにはログインしてください
+  .col-12.col-md-6.col-lg-6.mb-5
+    == render partial: 'responses/index', locals: { responses: @responses } 
