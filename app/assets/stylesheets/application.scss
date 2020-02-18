@@ -14,3 +14,16 @@
  *= require_self
  */
  @import "bootstrap";
+
+ .field{
+  input[type="email"]{
+    width: 400px;
+  } 
+  input[type="text"]{
+    width: 400px;
+  } 
+  input[type="password"]{
+    width: 400px;
+  } 
+}
+ 
