@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @category = Category.new
-    @post.post_category_relation.build
+    @post.post_category_relations.build
   end
 
   def create

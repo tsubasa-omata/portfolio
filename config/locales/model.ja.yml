@@ -10,13 +10,16 @@ ja:
         password: パスワード
         created_at: 登録日時
         updated_at: 更新日時
-      thread:
+      post:
         title: タイトル
+        content: 説明
         created_at: 登録日時
         updated_at: 更新日時
+        post_category_relations: カテゴリー
       response:
         content: 内容
         created_at: 登録日時
         updated_at: 更新日時
       categories:
         name: カテゴリー
+      

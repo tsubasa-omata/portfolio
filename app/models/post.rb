@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   has_many :categories, through: :post_category_relations
   validates :title, presence: true
   validates :content, presence: true
+  validates :post_category_relations, presence: true
 end
