@@ -20,9 +20,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to root_path
+      flash[:success] = "作成完了"
+      redirect_to post_path(@post)
     else
-      render 'new'
+      render "posts/new"
     end
   end
 

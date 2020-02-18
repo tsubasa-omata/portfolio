@@ -3,6 +3,7 @@ h2.text-center.mt-4 スレッド作成
   = f.input :title, label: 'タイトル'
   = f.input :content, label: '説明'
   .checkbox-list
+    = f.label "カテゴリ"
     = f.collection_check_boxes :category_ids, Category.all, :id, :name, class: "m-5"
   == render "shared/error_messages" , object: @post
   .text-center
