@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_member!, only: [:create]
+  before_action :authenticate_user!, only: [:create]
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result.page(params[:page]).per(5)

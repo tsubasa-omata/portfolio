@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  before_action :authenticate_member!, only: [:create]
+  before_action :authenticate_user!, only: [:create]
   def create
     @post = Post.find(params[:post_id])
     @response = @post.responses.build(response_params)
