@@ -1,21 +1,23 @@
-h2 ログイン
+h2.text-center.mt-4 ログイン
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-  .field
-    = f.label :email 
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email" 
+  .row.justify-content-center
+    .col-6
+			.field
+					= f.label :email 
+					br
+					= f.email_field :email, autofocus: true, autocomplete: "email" 
 
-  .field
-    = f.label :password 
-    br
-    = f.password_field :password, autocomplete: "current-password" 
+			.field
+					= f.label :password 
+					br
+					= f.password_field :password, autocomplete: "current-password" 
 
-  - if devise_mapping.rememberable? 
-    .field
-      = f.check_box :remember_me 
-      = f.label "ログイン状態を保持する"
+			- if devise_mapping.rememberable? 
+					.field
+					= f.check_box :remember_me 
+					= f.label "ログイン状態を保持する"
 
-  .actions
-    = f.submit "ログイン" 
+			.actions.text-center
+					= f.submit "ログイン" 
 
-= render "devise/shared/links"
+			= render "devise/shared/links"
