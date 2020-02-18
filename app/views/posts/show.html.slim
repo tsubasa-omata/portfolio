@@ -4,7 +4,12 @@ h2.text-center.mt-4 スレッド詳細
     = @post.title
   div
     = @post.content
-
+  div
+    p.d-inline-block
+      |カテゴリ：
+    - @post.post_category_relations.each do |post_category_relation| 
+      .mr-2.d-inline-block
+        = post_category_relation.category.name
 - if user_signed_in?
   == render partial: 'responses/index', locals: { responses: @responses } 
   == render partial: 'responses/form', locals: { response: @response, post: @post }
