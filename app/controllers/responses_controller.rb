@@ -8,7 +8,7 @@ class ResponsesController < ApplicationController
       flash[:success] = "投稿完了"
       redirect_to @post
     else
-      redirect_to @post
+      render @post
     end
   end
 
